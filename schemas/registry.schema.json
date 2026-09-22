@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ustaz registry",
+  "type": "object",
+  "required": ["ustaz"],
+  "properties": {
+    "ustaz": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "enabled", "config", "output"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "name": { "type": "string", "minLength": 1 },
+          "enabled": { "type": "boolean" },
+          "config": { "type": "string", "minLength": 1 },
+          "output": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

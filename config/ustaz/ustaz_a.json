@@ -1,0 +1,58 @@
+{
+  "id": "ustaz_a",
+
+  "identity": {
+    "name": "Example Ustaz",
+    "slug": "example-ustaz",
+    "description": "Islamic lectures and educational talks"
+  },
+
+  "sources": {
+    "youtube_channels": [
+      "https://www.youtube.com/@example"
+    ],
+    "youtube_playlists": []
+  },
+
+  "content": {
+    "languages": ["ms"],
+    "default_category": "ceramah"
+  },
+
+  "classification": {
+    "enabled": true,
+    "rules": {
+      "playlist_priority": true,
+      "title_priority": true,
+      "description_priority": true
+    },
+    "match_rules": [
+      { "match": ["tafsir", "surah", "ayat"], "category": "tafsir" },
+      { "match": ["fiqh", "hukum"], "category": "fiqh" },
+      { "match": ["aqidah", "akidah"], "category": "aqidah" },
+      { "match": ["akhlak", "adab"], "category": "akhlak" }
+    ]
+  },
+
+  "persona": {
+    "display_name": "Example Ustaz",
+    "short_description": "Islamic lectures and educational talks",
+    "intro_text": "Welcome to the archive of lectures and educational talks.",
+    "preferred_categories": ["ceramah", "tafsir", "fiqh"],
+    "site_style": "traditional"
+  },
+
+  "site": {
+    "title": "Example Ustaz Archive",
+    "theme": "default"
+  },
+
+  "download": {
+    "mode": "metadata"
+  },
+
+  "schedule": {
+    "enabled": true,
+    "interval": "daily"
+  }
+}

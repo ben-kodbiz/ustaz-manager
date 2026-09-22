@@ -1,0 +1,48 @@
+{
+  "project": {
+    "name": "ustaz-archive-factory",
+    "version": "0.1.0"
+  },
+  "runtime": {
+    "timezone": "Asia/Kuala_Lumpur",
+    "language": "en",
+    "dry_run": false
+  },
+  "storage": {
+    "database": "data/database/archive.db",
+    "downloads": "data/raw",
+    "metadata": "data/normalized",
+    "generated": "data/generated"
+  },
+  "youtube": {
+    "enabled": true,
+    "download": true,
+    "audio_only": false,
+    "archive_metadata": true,
+    "rate_limit": {
+      "sleep_between_requests": 2.0,
+      "max_sleep_between_requests": 4.0,
+      "source_spacing_seconds": 3.0,
+      "source_spacing_jitter_seconds": 1.0,
+      "cooldown_seconds": 120,
+      "max_consecutive_errors": 3
+    }
+  },
+  "processing": {
+    "max_workers": 1,
+    "retry_count": 3,
+    "backoff_seconds": 30
+  },
+  "classification": {
+    "rules_first": true,
+    "llm_fallback": false
+  },
+  "site": {
+    "generator": "static",
+    "frontend": "vanilla",
+    "css": "pico"
+  },
+  "publishing": {
+    "github_pages": true
+  }
+}

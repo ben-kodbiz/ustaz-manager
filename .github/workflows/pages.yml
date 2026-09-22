@@ -1,0 +1,60 @@
+# Phase 6 — validate generated sites, then deploy to GitHub Pages (Mode A).
+#
+# Flow: factory build → validate → git commit → Actions (this file) → Pages.
+# Generated output under apps/<id>/ is committed to this repo; Pages serves it
+# statically. No server, no build-time network access beyond setup actions.
+#
+# One-time repo setup: Settings → Pages → Source: "GitHub Actions".
+
+name: pages
+
+on:
+  push:
+    branches: ["master", "main"]
+    paths:
+      - "apps/**"
+      - "core/**"
+      - "manager/**"
+      - "config/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests (stdlib only, no network)
+        run: python3 -m unittest discover -s tests -v
+      - name: Doctor
+        run: ./archive.zsh doctor
+      - name: Validate generated sites (no rebuild — checks committed output)
+        run: ./archive.zsh publish --all --dry-run
+
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          # Mode A monorepo: every generated site lives under apps/<id>/.
+          path: apps
+      - id: deployment
+        uses: actions/deploy-pages@v5

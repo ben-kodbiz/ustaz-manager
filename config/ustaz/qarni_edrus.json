@@ -1,0 +1,87 @@
+{
+  "id": "qarni_edrus",
+  "identity": {
+    "name": "Qarni Edrus",
+    "slug": "qarni-edrus",
+    "description": "Islamic lectures and educational talks"
+  },
+  "sources": {
+    "youtube_channels": [
+      "https://www.youtube.com/channel/UCaaDiya_nMkD31_ssjV8mcQ",
+      "https://www.youtube.com/@suarasunnah"
+    ],
+    "youtube_playlists": [
+      "https://www.youtube.com/playlist?list=PLv_xoi4FGsu_Ca-iWHExloAKyUxK96mNU",
+      "https://www.youtube.com/playlist?list=PLv_xoi4FGsu8Y2CuKhUoRId0szziOz9He",
+      "https://www.youtube.com/playlist?list=PLv_xoi4FGsu_VrsuNVH8VqQVbxYLt22wc",
+      "https://www.youtube.com/playlist?list=PLv_xoi4FGsu_OrjOhwUltHg927qCs5U-1",
+      "https://www.youtube.com/playlist?list=PLv_xoi4FGsu_ByMXPjSrl9tHM8l_9CsG8",
+      "https://www.youtube.com/playlist?list=PLv_xoi4FGsu-iTgwAdFmUJNw4nX31GM9C",
+      "https://www.youtube.com/playlist?list=PL2gxQLpr4pa1PJ-TAKauEhmcDc_-yVyFi"
+    ]
+  },
+  "content": {
+    "languages": [
+      "ms"
+    ],
+    "default_category": "ceramah",
+    "speaker_names": [
+      "Qarni Edrus",
+      "Al-Qarni"
+    ]
+  },
+  "classification": {
+    "enabled": true,
+    "rules": {
+      "playlist_priority": true,
+      "title_priority": true,
+      "description_priority": true
+    },
+    "match_rules": [],
+    "series_rules": [
+      { "match": ["77 cabang iman"], "series": "77 Cabang Iman" },
+      { "match": ["40 ayat tadabbur kewangan"], "series": "40 Ayat Tadabbur Kewangan Islam" },
+      { "match": ["40 hadis aspirasi", "40 hadith aspirasi"], "series": "40 Hadis Aspirasi Kejayaan Rasulullah" },
+      { "match": ["pesan luqman", "luqman al-hakim"], "series": "Indahnya Pesan Luqman Al-Hakim" },
+      { "match": ["syu'ab", "syu’ab", "syuab"], "series": "Mukhtasar Syu'ab Al-Iman" },
+      { "match": ["manhaj aqidah"], "series": "Manhaj Aqidah Imam Syafie" },
+      { "match": ["minhajul qasidin"], "series": "Mukhtasar Minhajul Qasidin" },
+      { "match": ["dosa muamalat"], "series": "40 Hadith Dosa Muamalat Yang Diremehkan" },
+      { "match": ["kompas hidup bersyariat"], "series": "Kompas Hidup Bersyariat" },
+      { "match": ["islah al-qulub"], "series": "Al-Ahadith Al-Islah Al-Qulub" },
+      { "match": ["fiqh al-qulub"], "series": "Fiqh Al-Qulub" },
+      { "match": ["72 kisah para nabi"], "series": "72 Kisah Para Nabi" },
+      { "match": ["sirah al-basyir", "as-saghir fi sirah"], "series": "Mukhtasar As-Saghir Fi Sirah Al-Basyir" },
+      { "match": ["doa-doa", "doa doa"], "series": "Doa-Doa Di Dalam Al-Quran" },
+      { "match": ["qasas an-nabawi", "sahih al-qasas"], "series": "Sahih Al-Qasas An-Nabawi" },
+      { "match": ["fiqh akbar"], "series": "Al-Fiqh Al-Akbar" },
+      { "match": ["amalan kontroversi"], "series": "Amalan Kontroversi Dalam Masyarakat Islam" },
+      { "match": ["akhir zaman"], "series": "Hadis Peristiwa Akhir Zaman" },
+      { "match": ["fathul majid"], "series": "Fathul Majid" },
+      { "match": ["zikir nabawi"], "series": "Ustaz Qarni Edrus: Zikir Nabawi Selepas Solat" },
+      { "match": ["1000 amalan sunnah", "1000 sunnah"], "series": "Ustaz Qarni Edrus: 1000 Amalan Sunnah Sehari-Hari" },
+      { "match": ["bacaan pelik"], "series": "Ustaz Qarni Edrus: Bacaan Pelik & Ganjil Dalam Solat Namun Sahih" },
+      { "match": ["30 teknik"], "series": "Ustaz Qarni Edrus: 30 Teknik Tepat Tadabbur Al-Quran" },
+      { "match": ["keutamaan ilmu", "ilmu salaf"], "series": "Ustaz Qarni Edrus : Syarah Keutamaan Ilmu Salaf Berbanding Ilmu Khalaf" },
+      { "match": ["refleksi sosial", "surah al-balad"], "series": "Refleksi Sosial Surah Al-Balad" }
+    ]
+  },
+  "persona": {
+    "display_name": "Qarni Edrus",
+    "short_description": "Islamic lectures and educational talks",
+    "intro_text": "",
+    "preferred_categories": [],
+    "site_style": "traditional"
+  },
+  "site": {
+    "title": "Qarni Edrus Archive",
+    "theme": "default"
+  },
+  "download": {
+    "mode": "metadata"
+  },
+  "schedule": {
+    "enabled": false,
+    "interval": "daily"
+  }
+}

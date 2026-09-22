@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Runtime data (never commit media or the live DB)
+data/raw/
+data/database/*.db
+data/database/*.db-journal
+data/database/*.db-wal
+data/database/*.db-shm
+data/generated/
+logs/
+reports/
+
+# Local config overrides
+config/ustaz/*.local.json
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Universal configuration",
+  "type": "object",
+  "required": [
+    "project",
+    "runtime",
+    "storage",
+    "youtube",
+    "processing",
+    "classification",
+    "site",
+    "publishing"
+  ],
+  "properties": {
+    "project": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "required": ["timezone", "language", "dry_run"],
+      "properties": {
+        "timezone": { "type": "string", "minLength": 1 },
+        "language": { "type": "string", "minLength": 2 },
+        "dry_run": { "type": "boolean" }
+      }
+    },
+    "storage": {
+      "type": "object",
+      "required": ["database", "downloads", "metadata", "generated"],
+      "properties": {
+        "database": { "type": "string", "minLength": 1 },
+        "downloads": { "type": "string", "minLength": 1 },
+        "metadata": { "type": "string", "minLength": 1 },
+        "generated": { "type": "string", "minLength": 1 }
+      }
+    },
+    "youtube": {
+      "type": "object",
+      "required": ["enabled", "download", "audio_only", "archive_metadata"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "download": { "type": "boolean" },
+        "audio_only": { "type": "boolean" },
+        "archive_metadata": { "type": "boolean" },
+        "rate_limit": {
+          "type": "object",
+          "properties": {
+            "sleep_between_requests": { "type": "number", "minimum": 0 },
+            "max_sleep_between_requests": { "type": "number", "minimum": 0 },
+            "source_spacing_seconds": { "type": "number", "minimum": 0 },
+            "source_spacing_jitter_seconds": { "type": "number", "minimum": 0 },
+            "cooldown_seconds": { "type": "number", "minimum": 0 },
+            "max_consecutive_errors": { "type": "integer", "minimum": 1 }
+          }
+        }
+      }
+    },
+    "processing": {
+      "type": "object",
+      "required": ["max_workers", "retry_count", "backoff_seconds"],
+      "properties": {
+        "max_workers": { "type": "integer", "minimum": 1 },
+        "retry_count": { "type": "integer", "minimum": 0 },
+        "backoff_seconds": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["rules_first", "llm_fallback"],
+      "properties": {
+        "rules_first": { "type": "boolean" },
+        "llm_fallback": { "type": "boolean" }
+      }
+    },
+    "site": {
+      "type": "object",
+      "required": ["generator", "frontend", "css"],
+      "properties": {
+        "generator": { "type": "string", "enum": ["static"] },
+        "frontend": { "type": "string", "enum": ["vanilla"] },
+        "css": { "type": "string", "minLength": 1 }
+      }
+    },
+    "publishing": {
+      "type": "object",
+      "required": ["github_pages"],
+      "properties": {
+        "github_pages": { "type": "boolean" }
+      }
+    }
+  }
+}

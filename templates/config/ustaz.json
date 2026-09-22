@@ -1,0 +1,51 @@
+{
+  "id": "{{id}}",
+
+  "identity": {
+    "name": "{{name}}",
+    "slug": "{{slug}}",
+    "description": "{{description}}"
+  },
+
+  "sources": {
+    "youtube_channels": {{youtube_channels}},
+    "youtube_playlists": []
+  },
+
+  "content": {
+    "languages": ["{{language}}"],
+    "default_category": "ceramah"
+  },
+
+  "classification": {
+    "enabled": true,
+    "rules": {
+      "playlist_priority": true,
+      "title_priority": true,
+      "description_priority": true
+    },
+    "match_rules": []
+  },
+
+  "persona": {
+    "display_name": "{{name}}",
+    "short_description": "{{description}}",
+    "intro_text": "",
+    "preferred_categories": [],
+    "site_style": "traditional"
+  },
+
+  "site": {
+    "title": "{{name}} Archive",
+    "theme": "default"
+  },
+
+  "download": {
+    "mode": "metadata"
+  },
+
+  "schedule": {
+    "enabled": false,
+    "interval": "daily"
+  }
+}

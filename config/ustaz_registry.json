@@ -1,0 +1,18 @@
+{
+  "ustaz": [
+    {
+      "id": "ustaz_a",
+      "name": "Example Ustaz",
+      "enabled": true,
+      "config": "config/ustaz/ustaz_a.json",
+      "output": "apps/ustaz_a"
+    },
+    {
+      "id": "qarni_edrus",
+      "name": "Qarni Edrus",
+      "enabled": true,
+      "config": "config/ustaz/qarni_edrus.json",
+      "output": "apps/qarni_edrus"
+    }
+  ]
+}
